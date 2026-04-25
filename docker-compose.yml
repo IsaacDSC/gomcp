@@ -1,0 +1,13 @@
+services:
+  mcp-server:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    image: mcp-go-server:local
+    working_dir: /workspace
+    volumes:
+      - .:/workspace:ro
+    stdin_open: true
+    tty: true
+    environment:
+      LOG_LEVEL: INFO
